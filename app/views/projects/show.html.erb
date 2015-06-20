@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @project.name %>
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Project</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @project.specifics.each do |specific| %>
+      <tr>
+        <td><%= specific.name %></td>
+        <td><%= @project.id %></td>
+        <td><%= link_to 'Show', project_specific_path(@project, specific) %></td>
+        <td><%= link_to 'Edit', edit_project_specific_path(@project, specific) %></td>
+        <td><%= link_to 'Destroy', [@project, @specific], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Add Specific', new_project_specific_path(@project) %>
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

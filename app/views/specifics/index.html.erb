@@ -1,0 +1,29 @@
+<h1>Listing specifics</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Project</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @specifics.each do |specific| %>
+      <tr>
+        <td><%= specific.name %></td>
+        <td><%= @project.id %></td>
+        <td><%= link_to 'Show', project_specific_path(@project, specific) %></td>
+        <td><%= link_to 'Edit', ([:edit, @project, @specific]) %></td>
+        <td><%= link_to 'Destroy', project_specific_path(@project, specific), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Specific', new_project_specific_path(@project) %>
