@@ -1,10 +1,9 @@
 class SpecificsController < ApplicationController
   before_action :set_specific, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_project_find
   # GET /specifics
   # GET /specifics.json
   def index
-    @project = Project.find(params[:project_id])
     @specifics = @project.specifics.all
   end
 
@@ -16,20 +15,17 @@ class SpecificsController < ApplicationController
 
   # GET /specifics/new
   def new
-    @project = Project.find(params[:project_id])
     @specific = Specific.new
-
   end
 
   # GET /specifics/1/edit
   def edit
-    @project = Project.find(params[:project_id])
+    
   end
 
   # POST /specifics
   # POST /specifics.json
   def create
-    @project = Project.find(params[:project_id])
     @specific = @project.specifics.new(specific_params)
 
     respond_to do |format|
@@ -71,6 +67,9 @@ class SpecificsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_specific
       @specific = Specific.find(params[:id])
+    end
+    def set_project_find
+      @project = Project.find(params[:project_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -1,6 +1,10 @@
 Pr20::Application.routes.draw do
+  
+
   resources :projects do
-    resources :specifics
+    resources :specifics do
+      resources :table_specifics
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
