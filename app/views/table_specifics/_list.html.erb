@@ -1,0 +1,47 @@
+<h1>Listing table_specifics</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Factory</th>
+      <th>Model</th>
+      <th>Finishing</th>
+      <th>Description</th>
+      <th>Size</th>
+      <th>Number</th>
+      <th>Factory price</th>
+      <th>Factory sum</th>
+      <th>Factor</th>
+      <th>Price euro</th>
+      <th>Sum euro</th>
+      <th>V</th>
+      <th>Specific</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @specific.table_specifics.each do |table_specific| %>
+      <tr>
+        <td><%= table_specific.factory %></td>
+        <td><%= table_specific.model %></td>
+        <td><%= table_specific.finishing %></td>
+        <td><%= table_specific.description %></td>
+        <td><%= table_specific.size %></td>
+        <td><%= table_specific.number %></td>
+        <td><%= table_specific.factory_price %></td>
+        <td><%= table_specific.factory_sum %></td>
+        <td><%= table_specific.factor %></td>
+        <td><%= table_specific.price_euro %></td>
+        <td><%= table_specific.sum_euro %></td>
+        <td><%= table_specific.v %></td>
+        <td><%= table_specific.specific.id %></td>
+       
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

@@ -1,0 +1,66 @@
+<%= form_for([@project, @specific, @table_specific]) do |f| %>
+ 
+  <% if @table_specific.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@table_specific.errors.count, "error") %> prohibited this table_specific from being saved:</h2>
+
+      <ul>
+      <% @table_specific.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :factory %><br>
+    <%= f.text_field :factory %>
+  </div>
+  <div class="field">
+    <%= f.label :model %><br>
+    <%= f.text_field :model %>
+  </div>
+  <div class="field">
+    <%= f.label :finishing %><br>
+    <%= f.text_field :finishing %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :size %><br>
+    <%= f.text_field :size %>
+  </div>
+  <div class="field">
+    <%= f.label :number %><br>
+    <%= f.number_field :number %>
+  </div>
+  <div class="field">
+    <%= f.label :factory_price %><br>
+    <%= f.text_field :factory_price %>
+  </div>
+  <div class="field">
+    <%= f.label :factory_sum %><br>
+    <%= f.text_field :factory_sum %>
+  </div>
+  <div class="field">
+    <%= f.label :factor %><br>
+    <%= f.text_field :factor %>
+  </div>
+  <div class="field">
+    <%= f.label :price_euro %><br>
+    <%= f.text_field :price_euro %>
+  </div>
+  <div class="field">
+    <%= f.label :sum_euro %><br>
+    <%= f.text_field :sum_euro %>
+  </div>
+  <div class="field">
+    <%= f.label :v %><br>
+    <%= f.text_field :v %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

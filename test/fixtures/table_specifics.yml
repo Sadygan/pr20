@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  factory: MyString
+  model: MyString
+  finishing: MyString
+  description: MyString
+  size: MyString
+  number: 1
+  factory_price: 1.5
+  factory_sum: 1.5
+  factor: 1.5
+  price_euro: 1.5
+  sum_euro: 1.5
+  v: MyString
+  specific_id: 
+
+two:
+  factory: MyString
+  model: MyString
+  finishing: MyString
+  description: MyString
+  size: MyString
+  number: 1
+  factory_price: 1.5
+  factory_sum: 1.5
+  factor: 1.5
+  price_euro: 1.5
+  sum_euro: 1.5
+  v: MyString
+  specific_id: 
