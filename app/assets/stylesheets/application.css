@@ -11,3 +11,40 @@
  *= require_self
  *= require_tree .
  */
+.line {
+	display: inline-block;
+}
+.field {
+	display: inline-block;	
+}
+.wrapper{
+   width:100%;   
+}
+ 
+.table{
+   display:table;   
+   width:100%;
+}
+ 
+.row {
+  display: inline-table;
+  width: 100%;
+}
+.col{
+    display:table-cell; 
+    border:1px solid black;
+}
+ 
+.c10{
+   max-width:80px;
+   min-width:80px;   
+}
+.c10 > input {
+   max-width:100%;
+   min-width:100%;
+   border: 0; 	
+}
+ 
+.c25{
+   width:25%;   
+}

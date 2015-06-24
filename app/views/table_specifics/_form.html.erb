@@ -1,17 +1,17 @@
-<%= form_for([@project, @specific, @table_specific]) do |f| %>
- 
-  <% if @table_specific.errors.any? %>
+<%= form_for([@project, @specific, @specific.table_specifics.build]) do |f| %>
+   <% if @specific.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@table_specific.errors.count, "error") %> prohibited this table_specific from being saved:</h2>
+      <h2><%= pluralize(@specific.errors.count, "error") %> prohibited this specific from being saved:</h2>
 
       <ul>
-      <% @table_specific.errors.full_messages.each do |msg| %>
+      <% @specific.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
-
+  
+<div class="line">
   <div class="field">
     <%= f.label :factory %><br>
     <%= f.text_field :factory %>
@@ -62,5 +62,6 @@
   </div>
   <div class="actions">
     <%= f.submit %>
+  </div>
   </div>
 <% end %>

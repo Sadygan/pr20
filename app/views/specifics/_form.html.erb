@@ -1,15 +1,5 @@
-<%= form_for([@project, @specific]) do |f| %>
-  <% if @specific.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@specific.errors.count, "error") %> prohibited this specific from being saved:</h2>
+<%= @specific %> 
 
-      <ul>
-      <% @specific.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="field">
     <%= f.label :name %><br>

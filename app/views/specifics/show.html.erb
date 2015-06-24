@@ -10,7 +10,8 @@
   <%= @project.name %>
 </p>
 
-<%= render 'table_specifics/list' %>
+<%= render 'table_specifics/mix' %>
+
 
 <%= link_to 'New Line', new_project_specific_table_specific_path(@project, @specific)%>
 <%= link_to 'Back', project_specifics_path  %> 

@@ -27,7 +27,8 @@ class TableSpecificsController < ApplicationController
   # POST /table_specifics
   # POST /table_specifics.json
   def create
-    @table_specific = @specific.table_specifics.new(table_specific_params)
+
+    @table_specific = @specific.table_specifics.create(table_specific_params)
 
     respond_to do |format|
       if @table_specific.save
