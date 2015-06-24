@@ -1,0 +1,72 @@
+<h1>Listing table_specifics</h1>
+
+<div class="wrapper">
+    <div class="table">
+        <div class="row">
+            <div class="col c10">Factory</div>
+            <div class="col c10">Model</div>
+            <div class="col c10">Finishing</div>
+            <div class="col c10">Description</div>
+            <div class="col c10">Size</div>
+            <div class="col c10">Number</div>
+            <div class="col c10">Factory price</div>
+            <div class="col c10">Factory sum</div>
+            <div class="col c10">Factor</div>
+            <div class="col c10">Price euro</div>
+            <div class="col c10">Sum euro</div>
+            <div class="col c10">V</div>
+        </div>
+    </div>   
+     
+    <div class="table">
+      <% @specific.table_specifics.each do |table_specific| %>
+        <div class="row">
+          <div class="col c10"><%= table_specific.factory %></div>
+          <div class="col c10"><%= table_specific.model %></div>
+          <div class="col c10"><%= table_specific.finishing %></div>
+          <div class="col c10"><%= table_specific.description %></div>
+          <div class="col c10"><%= table_specific.size %></div>
+          <div class="col c10"><%= table_specific.number %></div>
+          <div class="col c10"><%= table_specific.factory_price %></div>
+          <div class="col c10"><%= table_specific.factory_sum %></div>
+          <div class="col c10"><%= table_specific.factor %></div>
+          <div class="col c10"><%= table_specific.price_euro %></div>
+          <div class="col c10"><%= table_specific.sum_euro %></div>
+          <div class="col c10"><%= table_specific.v %></div>
+        </div>
+      <% end %>  
+    </div>
+
+    <div class="table">
+    <%= form_for([@project, @specific, @specific.table_specifics.build]) do |f| %>
+      <% if @specific.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@specific.errors.count, "error") %> prohibited this specific from being saved:</h2>
+          <ul>
+          <% @specific.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+        <div class="row">
+          <div class="col c10"><%= f.text_field :factory %></div>
+          <div class="col c10"><%= f.text_field :model %></div>
+          <div class="col c10"><%= f.text_field :finishing %></div>
+          <div class="col c10"><%= f.text_field :description %></div>
+          <div class="col c10"><%= f.text_field :size %></div>
+          <div class="col c10"><%= f.number_field :number %></div>
+          <div class="col c10"><%= f.text_field :factory_price %></div>
+          <div class="col c10"><%= f.text_field :factory_sum %></div>
+          <div class="col c10"><%= f.text_field :factor %></div>
+          <div class="col c10"><%= f.text_field :price_euro %></div>
+          <div class="col c10"><%= f.text_field :sum_euro %></div>
+          <div class="col c10"><%= f.text_field :v %></div>
+        </div>
+         
+        </div>
+        <div class="submit"><%= f.submit %></div>
+      <% end %>  
+    </div>
+</div>
+
