@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150701072147) do
+ActiveRecord::Schema.define(version: 20150701113045) do
 
   create_table "containers", force: true do |t|
     t.string   "name"
@@ -19,6 +19,10 @@ ActiveRecord::Schema.define(version: 20150701072147) do
     t.integer  "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "containers", ["project_id"], name: "index_containers_on_project_id"

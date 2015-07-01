@@ -1,9 +1,12 @@
 <p id="notice"><%= notice %></p>
+<!-- Specifications -->
+
 
 <p>
-  <strong>Name:</strong>
+  <strong>Project Name:</strong>
   <%= @project.name %>
 </p>
+<h4>Specifications</h4>
 <table>
   <thead>
     <tr>
@@ -31,6 +34,7 @@
 
 
 <!-- Photo -->
+
 <h4>Photos</h4>
 <table>
   <thead>
@@ -47,7 +51,7 @@
     <% @project.containers.each do |photo| %>
       <tr>
         <td><%= photo.name %></td>
-        <td><%= photo.project_id%></td>
+        <td><%= image_tag photo.image%></td>
         <td><%= link_to 'Show', "project_specific_path(@project, specific)" %></td>
         <td><%= link_to 'Edit', "edit_project_specific_path(@project, specific)" %></td>
         <td><%= link_to 'Destroy', "[@project, @specific], method: :delete, data: { confirm: 'Are you sure?' }" %></td>

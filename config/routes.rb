@@ -1,12 +1,8 @@
 Pr20::Application.routes.draw do
-  
-
-  
-
+ 
   resources :projects do
     resources :containers
     resources :photos
-    
     resources :specifics do
       resources :table_specifics
     end

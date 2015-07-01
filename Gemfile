@@ -49,3 +49,6 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+#Use Paperclip
+gem "paperclip", "~> 4.3"
