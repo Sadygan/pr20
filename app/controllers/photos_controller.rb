@@ -29,14 +29,15 @@ class PhotosController < ApplicationController
     # redirect_to @project, notice: 'Photo was successfully created.'
       respond_to do |format|
       if @photo.save
-       if params[:images]
-        #===== The magic is here ;)
-        params[:images].each { |image|
-          @project.containers.create(image: image)
+       unless params[:name]
+       
+      end
+       if params[:images] && !params[:name]
+          #===== The magic is here ;)
+          params[:images].each { |image|
+          @project.containers.create(image: image, name: "uncategory")
         }
       end
-       
-        
 
         format.html { redirect_to @project, notice: 'Gallery was successfully created.' }
         format.json { render json: @project, status: :created, location: @project }
@@ -83,6 +84,6 @@ class PhotosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def photo_params
-      params.require(:photo).permit(:name, :filetype, :project_id, :image, :table_specific_id)
+      params.require(:photo).permit(:name, :filetype, :image, :table_specific_id)
     end
 end

@@ -1,6 +1,6 @@
 class Container < ActiveRecord::Base
-  belongs_to :project, :polymorphic => true
-  
+  belongs_to :project,
+  belongs_to :table_specific,
   self.inheritance_column = :filetype 
     def self.filetypes
       %w(Photo)

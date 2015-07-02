@@ -3,6 +3,7 @@
 <div class="wrapper">
     <div class="table">
         <div class="row">
+            <div class="col c10">Images</div>
             <div class="col c10">Factory</div>
             <div class="col c10">Model</div>
             <div class="col c10">Finishing</div>
@@ -21,6 +22,7 @@
     <div class="table">
       <% @specific.table_specifics.each do |table_specific| %>
         <div class="row">
+          <div class="col c10"><%= table_specific.factory %></div>
           <div class="col c10"><%= table_specific.factory %></div>
           <div class="col c10"><%= table_specific.model %></div>
           <div class="col c10"><%= table_specific.finishing %></div>
@@ -46,10 +48,11 @@
           <% @specific.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>
           <% end %>
-          </ul>
+          </ul>s
         </div>
       <% end %>
         <div class="row">
+          <div class="col c10"><%= link_to 'Add Photo', new_project_photo_path(@project, @container, @photo)%></div>
           <div class="col c10"><%= f.text_field :factory %></div>
           <div class="col c10"><%= f.text_field :model %></div>
           <div class="col c10"><%= f.text_field :finishing %></div>

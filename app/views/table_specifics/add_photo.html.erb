@@ -1,0 +1,26 @@
+<!-- Photo -->
+
+<h4>Photos</h4>
+<table>
+  <thead>
+    <tr>
+      <th>Photo</th>
+      <th>Project</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @project.containers.each do |photo| %>
+      <tr>
+        <td><%= photo.name %></td>
+        <td><%= image_tag photo.image%></td>
+        <td><%= link_to 'Show', "project_specific_path(@project, specific)" %></td>
+        <td><%= link_to 'Edit', "edit_project_specific_path(@project, specific)" %></td>
+        <td><%= link_to 'Destroy', "[@project, @specific], method: :delete, data: { confirm: 'Are you sure?' }" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

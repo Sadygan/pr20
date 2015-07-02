@@ -1,15 +1,14 @@
 Pr20::Application.routes.draw do
- 
-  resources :containers
-
+  
   resources :projects do
     resources :containers
     resources :photos
     resources :specifics do
-      resources :table_specifics
+        resources :table_specifics do
+      end
     end
   end
-
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
