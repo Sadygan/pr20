@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150701113045) do
+ActiveRecord::Schema.define(version: 20150702112810) do
 
   create_table "containers", force: true do |t|
     t.string   "name"

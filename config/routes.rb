@@ -1,5 +1,7 @@
 Pr20::Application.routes.draw do
  
+  resources :containers
+
   resources :projects do
     resources :containers
     resources :photos
