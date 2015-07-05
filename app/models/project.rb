@@ -4,5 +4,4 @@ class Project < ActiveRecord::Base
 	accepts_nested_attributes_for :specifics
 	accepts_nested_attributes_for :containers
 	validates :name, presence: true, length: { minimum: 5 }
-
 end

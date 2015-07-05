@@ -1,67 +1,78 @@
-<%= form_for([@project, @specific, @specific.table_specifics.build]) do |f| %>
-   <% if @specific.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@specific.errors.count, "error") %> prohibited this specific from being saved:</h2>
+<div class="wrapper">
+    <div class="table">
+        <div class="row">
+            <div class="col specific_images">Images</div>
+            <div class="col c10">Factory</div>
+            <div class="col c10">Model</div>
+            <div class="col c10">Finishing</div>
+            <div class="col c10">Description</div>
+            <div class="col c10">Size</div>
+            <div class="col c10">Number</div>
+            <div class="col c10">Factory price</div>
+            <div class="col c10">Factory sum</div>
+            <div class="col c10">Factor</div>
+            <div class="col c10">Price euro</div>
+            <div class="col c10">Sum euro</div>
+            <div class="col c10">V</div>
+        </div>
+    </div>   
+    
+    <div class="table">
+       
+       <%= form_for([@project, @specific, @specific.table_specifics.build], :html => { :multipart => true }) do |f| %>
+         <% if @specific.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@specific.errors.count, "error") %> prohibited this specific from being saved:</h2>
+            <ul>
+            <% @specific.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>     
 
-      <ul>
-      <% @specific.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+      <% @specific.table_specifics.each do |table_specific| %>
+        <div class="row">
+          <div class="col specific_images">
+            <% @project.containers.each do |photo| %>
+              <% if photo.name == table_specific.id.to_s %>
+              <%= image_tag photo.image %>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="col c10"><%= table_specific.factory %></div>
+          <div class="col c10"><%= table_specific.model %></div>
+          <div class="col c10"><%= table_specific.finishing %></div>
+          <div class="col c10"><%= table_specific.description %></div>
+          <div class="col c10"><%= table_specific.size %></div>
+          <div class="col c10"><%= table_specific.number %></div>
+          <div class="col c10"><%= table_specific.factory_price %></div>
+          <div class="col c10"><%= table_specific.factory_sum %></div>
+          <div class="col c10"><%= table_specific.factor %></div>
+          <div class="col c10"><%= table_specific.price_euro %></div>
+          <div class="col c10"><%= table_specific.sum_euro %></div>
+          <div class="col c10"><%= table_specific.v %></div>
+        </div>
+      <% end %>  
     </div>
-  <% end %>
-  
-<div class="line">
-  <div class="field">
-    <%= f.label :factory %><br>
-    <%= f.text_field :factory %>
+    <div class="table">
+      <div class="row">
+          <div class="col specific_images"><%= file_field_tag "images[]", type: :file, multiple: true %></div>
+          <div class="col c10"><%= f.text_field :factory %></div>
+          <div class="col c10"><%= f.text_field :model %></div>
+          <div class="col c10"><%= f.text_field :finishing %></div>
+          <div class="col c10"><%= f.text_field :description %></div>
+          <div class="col c10"><%= f.text_field :size %></div>
+          <div class="col c10"><%= f.number_field :number %></div>
+          <div class="col c10"><%= f.text_field :factory_price %></div>
+          <div class="col c10"><%= f.text_field :factory_sum %></div>
+          <div class="col c10"><%= f.text_field :factor %></div>
+          <div class="col c10"><%= f.text_field :price_euro %></div>
+          <div class="col c10"><%= f.text_field :sum_euro %></div>
+          <div class="col c10"><%= f.text_field :v %></div>
+        </div>
   </div>
-  <div class="field">
-    <%= f.label :model %><br>
-    <%= f.text_field :model %>
-  </div>
-  <div class="field">
-    <%= f.label :finishing %><br>
-    <%= f.text_field :finishing %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :size %><br>
-    <%= f.text_field :size %>
-  </div>
-  <div class="field">
-    <%= f.label :number %><br>
-    <%= f.number_field :number %>
-  </div>
-  <div class="field">
-    <%= f.label :factory_price %><br>
-    <%= f.text_field :factory_price %>
-  </div>
-  <div class="field">
-    <%= f.label :factory_sum %><br>
-    <%= f.text_field :factory_sum %>
-  </div>
-  <div class="field">
-    <%= f.label :factor %><br>
-    <%= f.text_field :factor %>
-  </div>
-  <div class="field">
-    <%= f.label :price_euro %><br>
-    <%= f.text_field :price_euro %>
-  </div>
-  <div class="field">
-    <%= f.label :sum_euro %><br>
-    <%= f.text_field :sum_euro %>
-  </div>
-  <div class="field">
-    <%= f.label :v %><br>
-    <%= f.text_field :v %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-  </div>
+  <div class="submit"><%= f.submit %></div>
+</div>
+
 <% end %>

@@ -25,7 +25,7 @@
    display:table;   
    width:100%;
 }
- 
+
 .row {
   display: inline-table;
   width: 100%;
@@ -47,4 +47,7 @@
  
 .c25{
    width:25%;   
+}
+.specific_images {
+  width: 300px;
 }

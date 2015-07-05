@@ -29,16 +29,12 @@ class PhotosController < ApplicationController
     # redirect_to @project, notice: 'Photo was successfully created.'
       respond_to do |format|
       if @photo.save
-       unless params[:name]
-       
-      end
-       if params[:images] && !params[:name]
+        if params[:images] && !params[:name]
           #===== The magic is here ;)
           params[:images].each { |image|
           @project.containers.create(image: image, name: "uncategory")
         }
       end
-
         format.html { redirect_to @project, notice: 'Gallery was successfully created.' }
         format.json { render json: @project, status: :created, location: @project }
       else

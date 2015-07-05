@@ -32,6 +32,12 @@ class TableSpecificsController < ApplicationController
 
     respond_to do |format|
       if @table_specific.save
+        if params[:images] && !params[:name]
+          #===== The magic is here ;)
+          params[:images].each { |image|
+          @project.containers.create(image: image, name: @table_specific)
+        }
+      end        
         format.html { redirect_to [@project, @specific], notice: 'Table specific was successfully created.' }
         format.json { render action: 'show', status: :created, location: @table_specific }
       else
