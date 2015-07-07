@@ -7,7 +7,7 @@ class Container < ActiveRecord::Base
     end
 
     has_attached_file :image, 
-    	   			  :styles=>{:medium => "300x300>", :thumb => "100x100>"},
+    	   			  :styles=>{:medium => "300x300>", :thumb => "280x280>"},
     	   			  :path => ":rails_root/public/images/:id/:filename",
     				    :url  => "/images/:id/:filename"
     				  

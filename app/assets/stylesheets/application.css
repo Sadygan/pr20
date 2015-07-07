@@ -33,11 +33,12 @@
 .col{
     display:table-cell; 
     border:1px solid black;
+    text-align: center;
 }
  
 .c10{
    max-width:80px;
-   min-width:80px;   
+   min-width:80px;  
 }
 .c10 > input {
    max-width:100%;
@@ -50,4 +51,9 @@
 }
 .specific_images {
   width: 300px;
+}
+.specific_images img {
+  width: 90%;
+  margin: 5px 0 -10px 0;
+    padding-bottom: 10px
 }

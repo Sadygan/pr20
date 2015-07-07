@@ -30,7 +30,7 @@ class SpecificsController < ApplicationController
 
     respond_to do |format|
       if @specific.save
-        format.html { redirect_to [@project, @specific], notice: 'Specific was successfully created.' }
+        format.html { redirect_to new_project_specific_table_specific_path(@project, @specific, @table_specifics), notice: 'Specific was successfully created.' }
         format.json { render action: 'show', status: :created, location: @specific }
       else
         format.html { render action: 'new' }

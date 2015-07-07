@@ -38,7 +38,7 @@ class TableSpecificsController < ApplicationController
           @project.containers.create(image: image, name: @table_specific)
         }
       end        
-        format.html { redirect_to [@project, @specific], notice: 'Table specific was successfully created.' }
+        format.html { redirect_to new_project_specific_table_specific_path(@project, @specific, @table_specifics), notice: 'Table specific was successfully created.' }
         format.json { render action: 'show', status: :created, location: @table_specific }
       else
         format.html { render action: 'new' }
