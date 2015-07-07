@@ -84,6 +84,6 @@ class TableSpecificsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def table_specific_params
-      params.require(:table_specific).permit(:factory, :model, :finishing, :description, :size, :number, :factory_price, :factory_sum, :factor, :price_euro, :sum_euro, :v, :specific_id)
+      params.require(:table_specific).permit(:factory, :aticle, :type_furniture, :finishing, :finishing_for_client, :size, :unit_price, :percent_discount, :unit_price_netto, :summ_netto, :unit_v, :summ_v, :factor, :unit_price, :number_of, :summ, :specific_id)
     end
 end

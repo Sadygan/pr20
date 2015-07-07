@@ -3,17 +3,21 @@
         <div class="row">
             <div class="col specific_images">Images</div>
             <div class="col c10">Factory</div>
-            <div class="col c10">Model</div>
+            <div class="col c10">Article</div>
+            <div class="col c10">Type Furniture</div>
             <div class="col c10">Finishing</div>
-            <div class="col c10">Description</div>
+            <div class="col c10">Finishing for Client</div>
             <div class="col c10">Size</div>
-            <div class="col c10">Number</div>
-            <div class="col c10">Factory price</div>
-            <div class="col c10">Factory sum</div>
+            <div class="col c10">Unit price</div>
+            <div class="col c10"> % </div>
+            <div class="col c10">Unit price netto</div>
+            <div class="col c10">Summ netto</div>
+            <div class="col c10">Unit V</div>
+            <div class="col c10">Summ V</div>
             <div class="col c10">Factor</div>
-            <div class="col c10">Price euro</div>
-            <div class="col c10">Sum euro</div>
-            <div class="col c10">V</div>
+            <div class="col c10">Unit Price</div>
+            <div class="col c10">Number of</div>
+            <div class="col c10">Summ</div>
         </div>
     </div>   
     
@@ -41,19 +45,21 @@
           </div>
           <% @w = @w.to_f+@s.to_f %>
           <div class="col c10"><%= table_specific.factory %></div>
-          <div class="col c10"><%= table_specific.model %></div>
+          <div class="col c10"><%= table_specific.article %></div>
+          <div class="col c10"><%= table_specific.type_furniture %></div>
           <div class="col c10"><%= table_specific.finishing %></div>
-          <div class="col c10"><%= table_specific.description %></div>
+          <div class="col c10"><%= table_specific.finishing_for_client %></div>
           <div class="col c10"><%= table_specific.size %></div>
-          <div class="col c10"><%= table_specific.number %></div>
-          <div class="col c10"><%= table_specific.factory_price %></div>
-          <div class="col c10"><%= 
-          q = table_specific.factory_price.to_f * table_specific.number.to_f %></div>
-          <div class="col c10"><%= table_specific.factor %></div>
-          <div class="col c10"><%= table_specific.price_euro %></div>
-          <div class="col c10"><%= @s = q.round(2) * table_specific.factor.to_f.round(2) 
-                                   @s.round(2) %></div>
-          <div class="col c10"><%= table_specific.v %></div>
+          <div class="col c10"><%= table_specific.unit_price %></div>
+         <div class="col c10"><%= table_specific.percent_discount %></div>
+         <div class="col c10"><%= table_specific.unit_price_netto %></div>
+         <div class="col c10"><%= table_specific.summ_netto %></div>
+         <div class="col c10"><%= table_specific.unit_v %></div>
+         <div class="col c10"><%= table_specific.summ_v %></div>
+         <div class="col c10"><%= table_specific.factor %></div>
+         <div class="col c10"><%= table_specific.unit_price %></div>
+         <div class="col c10"><%= table_specific.number_of %></div>
+         <div class="col c10"><%= table_specific.summ %></div>
         </div>
       <% end %>  
     </div>
@@ -61,17 +67,20 @@
       <div class="row">
           <div class="col specific_images"><%= file_field_tag "images[]", type: :file, multiple: true %></div>
           <div class="col c10"><%= f.text_field :factory %></div>
-          <div class="col c10"><%= f.text_field :model %></div>
+          <div class="col c10"><%= f.text_field :article %></div>
+          <div class="col c10"><%= f.text_field :type_furniture %></div>
           <div class="col c10"><%= f.text_field :finishing %></div>
-          <div class="col c10"><%= f.text_field :description %></div>
-          <div class="col c10"><%= f.text_field :size %></div>
-          <div class="col c10"><%= f.number_field :number %></div>
-          <div class="col c10"><%= f.text_field :factory_price %></div>
-          <div class="col c10" style="color:green"><%= %></div>
-          <div class="col c10"><%= f.text_field :factor %></div>
-          <div class="col c10"><%= f.text_field :price_euro %></div>
-          <div class="col c10"><%= %></div>
-          <div class="col c10"><%= f.text_field :v %></div>
+          <div class="col c10"><%= f.text_field :finishing_for_client %></div>
+          <div class="col c10"><%= f.number_field :size %></div>
+          <div class="col c10"><%= f.text_field :unit_price %></div>
+          <div class="col c10" style="color:green"><%= f.text_field :percent_discount %></div>
+          <div class="col c10"><%= f.text_field :unit_price_netto %></div>
+          <div class="col c10"><%= f.number_field :unit_v %></div>
+          <div class="col c10"><%= f.number_field :summ_v %></div>
+          <div class="col c10"><%= f.number_field :factor %></div>
+          <div class="col c10"><%= f.number_field :unit_price %></div>
+          <div class="col c10"><%= f.number_field :number_of %></div>
+          <div class="col c10"><%= f.number_field :summ %></div>
         </div>
   </div>
   <div class="table">
@@ -84,10 +93,10 @@
           <div class="col c10"></div>
           <div class="col c10"></div>
           <div class="col c10"></div>
-          <div class="col c10" style="color:green"><%= %></div>
           <div class="col c10"></div>
-          <div class="col c10">Summ</div>
-          <div class="col c10"><%= @w.round(2) %></div>
+          <div class="col c10"></div>
+          <div class="col c10"></div>
+          <div class="col c10"></div>
           <div class="col c10"></div>
         </div>
   </div>
