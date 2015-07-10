@@ -56,3 +56,7 @@ end
 
 #Use Paperclip
 gem "paperclip", "~> 4.3"
+
+#Use Bootstrap-sass
+gem 'bootstrap-sass'
+gem 'bootstrap_form'
