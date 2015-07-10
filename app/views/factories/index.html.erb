@@ -1,0 +1,49 @@
+<h1>Listing factories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Brend</th>
+      <th>Web</th>
+      <th>Autirification</th>
+      <th>Style</th>
+      <th>Line product</th>
+      <th>Catalog</th>
+      <th>Price</th>
+      <th>Discount</th>
+      <th>Additional discount</th>
+      <th>Delivery term</th>
+      <th>Note</th>
+      <th>Reference</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @factories.each do |factory| %>
+      <tr>
+        <td><%= factory.brend %></td>
+        <td><%= factory.web %></td>
+        <td><%= factory.autirification %></td>
+        <td><%= factory.style %></td>
+        <td><%= factory.line_product %></td>
+        <td><%= factory.catalog %></td>
+        <td><%= factory.price %></td>
+        <td><%= factory.discount %></td>
+        <td><%= factory.additional_discount %></td>
+        <td><%= factory.delivery_term %></td>
+        <td><%= factory.note %></td>
+        <td><%= factory.reference %></td>
+        <td><%= link_to 'Show', factory %></td>
+        <td><%= link_to 'Edit', edit_factory_path(factory) %></td>
+        <td><%= link_to 'Destroy', factory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Factory', new_factory_path %>

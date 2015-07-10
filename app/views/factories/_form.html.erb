@@ -1,0 +1,65 @@
+<%= form_for(@factory) do |f| %>
+  <% if @factory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@factory.errors.count, "error") %> prohibited this factory from being saved:</h2>
+
+      <ul>
+      <% @factory.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :brend %><br>
+    <%= f.text_field :brend %>
+  </div>
+  <div class="field">
+    <%= f.label :web %><br>
+    <%= f.text_field :web %>
+  </div>
+  <div class="field">
+    <%= f.label :autirification %><br>
+    <%= f.text_field :autirification %>
+  </div>
+  <div class="field">
+    <%= f.label :style %><br>
+    <%= f.text_field :style %>
+  </div>
+  <div class="field">
+    <%= f.label :line_product %><br>
+    <%= f.text_field :line_product %>
+  </div>
+  <div class="field">
+    <%= f.label :catalog %><br>
+    <%= f.text_field :catalog %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :discount %><br>
+    <%= f.text_field :discount %>
+  </div>
+  <div class="field">
+    <%= f.label :additional_discount %><br>
+    <%= f.text_field :additional_discount %>
+  </div>
+  <div class="field">
+    <%= f.label :delivery_term %><br>
+    <%= f.text_field :delivery_term %>
+  </div>
+  <div class="field">
+    <%= f.label :note %><br>
+    <%= f.text_field :note %>
+  </div>
+  <div class="field">
+    <%= f.label :reference %><br>
+    <%= f.text_field :reference %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,41 @@
+<%= form_for(@factory_light) do |f| %>
+  <% if @factory_light.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@factory_light.errors.count, "error") %> prohibited this factory_light from being saved:</h2>
+
+      <ul>
+      <% @factory_light.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :brend %><br>
+    <%= f.text_field :brend %>
+  </div>
+  <div class="field">
+    <%= f.label :regin %><br>
+    <%= f.text_field :regin %>
+  </div>
+  <div class="field">
+    <%= f.label :factor %><br>
+    <%= f.text_field :factor %>
+  </div>
+  <div class="field">
+    <%= f.label :minimum_order %><br>
+    <%= f.number_field :minimum_order %>
+  </div>
+  <div class="field">
+    <%= f.label :delivery_time %><br>
+    <%= f.text_field :delivery_time %>
+  </div>
+  <div class="field">
+    <%= f.label :table_specification %><br>
+    <%= f.text_field :table_specification %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

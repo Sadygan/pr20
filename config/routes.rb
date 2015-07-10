@@ -1,5 +1,9 @@
 Pr20::Application.routes.draw do
   
+  resources :factory_lights
+
+  resources :factories
+
   resources :projects do
     resources :containers
     resources :photos

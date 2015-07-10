@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150702112810) do
+ActiveRecord::Schema.define(version: 20150710095920) do
 
   create_table "containers", force: true do |t|
     t.string   "name"
@@ -27,8 +27,37 @@ ActiveRecord::Schema.define(version: 20150702112810) do
 
   add_index "containers", ["project_id"], name: "index_containers_on_project_id"
 
+  create_table "factories", force: true do |t|
+    t.string   "brend"
+    t.string   "web"
+    t.string   "autirification"
+    t.string   "style"
+    t.string   "line_product"
+    t.string   "catalog"
+    t.string   "price"
+    t.string   "discount"
+    t.string   "additional_discount"
+    t.string   "delivery_term"
+    t.string   "note"
+    t.integer  "table_specific_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "factory_lights", force: true do |t|
+    t.string   "brend"
+    t.string   "regin"
+    t.float    "factor"
+    t.integer  "minimum_order"
+    t.string   "delivery_time"
+    t.integer  "table_specification_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "projects", force: true do |t|
-    t.string   "name"
+    t.string   "address"
+    t.string   "client"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -43,19 +72,19 @@ ActiveRecord::Schema.define(version: 20150702112810) do
   add_index "specifics", ["project_id"], name: "index_specifics_on_project_id"
 
   create_table "table_specifics", force: true do |t|
-    t.string   "factory"
     t.string   "article"
     t.text     "type_furniture"
     t.string   "finishing"
     t.string   "finishing_for_client"
     t.string   "size"
-    t.float    "unit_price"
-    t.float    "percent_discount"
+    t.float    "unit_price_factory"
+    t.integer  "additional_discount"
     t.float    "unit_price_netto"
     t.float    "summ_netto"
     t.float    "unit_v"
     t.float    "summ_v"
     t.float    "factor"
+    t.float    "unit_price"
     t.integer  "number_of"
     t.string   "summ"
     t.integer  "specific_id"

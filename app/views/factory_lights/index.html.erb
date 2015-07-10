@@ -1,0 +1,37 @@
+<h1>Listing factory_lights</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Brend</th>
+      <th>Regin</th>
+      <th>Factor</th>
+      <th>Minimum order</th>
+      <th>Delivery time</th>
+      <th>Table specification</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @factory_lights.each do |factory_light| %>
+      <tr>
+        <td><%= factory_light.brend %></td>
+        <td><%= factory_light.regin %></td>
+        <td><%= factory_light.factor %></td>
+        <td><%= factory_light.minimum_order %></td>
+        <td><%= factory_light.delivery_time %></td>
+        <td><%= factory_light.table_specification %></td>
+        <td><%= link_to 'Show', factory_light %></td>
+        <td><%= link_to 'Edit', edit_factory_light_path(factory_light) %></td>
+        <td><%= link_to 'Destroy', factory_light, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Factory light', new_factory_light_path %>

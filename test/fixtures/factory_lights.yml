@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  brend: MyString
+  regin: MyString
+  factor: 1.5
+  minimum_order: 1
+  delivery_time: MyString
+  table_specification: 
+
+two:
+  brend: MyString
+  regin: MyString
+  factor: 1.5
+  minimum_order: 1
+  delivery_time: MyString
+  table_specification: 

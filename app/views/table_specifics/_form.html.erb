@@ -9,8 +9,9 @@
       <th>Finishing</th>
       <th>Finishing for Client</th>
       <th>Size</th>
-      <th>Unit price</th>
+      <th>Unit price factory</th>
       <th>%</th>
+      <th>+%</th>
       <th>Unit price netto</th>
       <th>Summ netto</th>
       <th>Unit V</th>
@@ -35,6 +36,8 @@
         </div>
       <% end %>     
     <tr>
+
+    <!-- Image -->
     <% @specific.table_specifics.each do |table_specific| %>
     <% @project.containers.each do |photo| %>
       <% if photo.name == table_specific.id.to_s %>
@@ -42,14 +45,15 @@
       <% end %>
     <% end %>      
       
-        <td><%= table_specific.factory %></td>
+        <td><%= "Factory Name!" %></td>
         <td><%= table_specific.article %></td>
         <td><%= table_specific.type_furniture %></td>
         <td><%= table_specific.finishing %></td>
         <td><%= table_specific.finishing_for_client %></td>
         <td><%= table_specific.size %></td>
-        <td><%= table_specific.unit_price %></td>
-        <td><%= table_specific.percent_discount %></td>
+        <td><%= table_specific.unit_price_factory %></td>
+        <td><%= "50!" %></td>
+        <td><%= table_specific.additional_discount %></td>
         <td><%= table_specific.unit_price_netto %></td>
         <td><%= table_specific.summ_netto %></td>
         <td><%= table_specific.unit_v %></td>
@@ -62,15 +66,22 @@
     <% end %>
       <tr>
         
-        <td><%= file_field_tag "images[]", type: :file, multiple: true, hide_label: true %></td>
-        <td><%= f.text_field :factory, hide_label: true %></td>
+        <td><%= file_field_tag "images[]", 
+                                class: "filestyle", 
+                                value: "hello",
+                                multiple: true, 
+                                hide_label: true,
+                                databadge: "false" 
+
+                                %></td>
+        <td><%=  %></td>
         <td><%= f.text_field :article, hide_label: true %></td>
         <td><%= f.text_field :type_furniture, hide_label: true %></td>
         <td><%= f.text_field :finishing, hide_label: true %></td>
         <td><%= f.text_field :finishing_for_client, hide_label: true %></td>
         <td><%= f.number_field :size, hide_label: true %></td>
         <td><%= f.text_field :unit_price, hide_label: true %></td>
-        <td><%= f.text_field :percent_discount, hide_label: true %></td>
+        <td><%=  %></td>
         <td><%= f.text_field :unit_price_netto, hide_label: true %></td>
         <td><%= f.number_field :summ_netto, hide_label: true %></td>
         <td><%= f.number_field :unit_v, hide_label: true %></td>
