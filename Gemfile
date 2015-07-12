@@ -60,3 +60,4 @@ gem "paperclip", "~> 4.3"
 #Use Bootstrap-sass
 gem 'bootstrap-sass'
 gem 'bootstrap_form'
+gem 'bootstrap-filestyle-rails'

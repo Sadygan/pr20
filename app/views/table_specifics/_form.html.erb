@@ -68,11 +68,10 @@
         
         <td><%= file_field_tag "images[]", 
                                 class: "filestyle", 
-                                value: "hello",
+                                :"data-input" => "false",
+                                :"data-icon" => "false",
                                 multiple: true, 
-                                hide_label: true,
-                                databadge: "false" 
-
+                                hide_label: true
                                 %></td>
         <td><%=  %></td>
         <td><%= f.text_field :article, hide_label: true %></td>

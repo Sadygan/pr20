@@ -4,8 +4,8 @@ class CreateTableSpecifics < ActiveRecord::Migration
       t.string  :article
       t.text    :type_furniture
       t.string  :finishing
-      t.string  :finishing_for_client
-      t.string  :size
+      t.text    :finishing_for_client
+      t.text    :size
       t.float   :unit_price_factory
       t.integer :additional_discount
       t.float   :unit_price_netto
